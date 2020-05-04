@@ -8,7 +8,7 @@
 #include "difNormal.h"
 #include "difDificil.h"
 #include "ScoresGame.h"
-#include <X11/Xlib.h>
+
 
 
 
