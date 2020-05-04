@@ -32,7 +32,7 @@ void pantallaCa(){
   MasterMind();
   printf("\n\n\t LOADING " );
 
-  char ch = 219;
+  
   for (int i = 0; i <= 10; i++){ //30 realista
     printf("███");
     sleep(1);
