@@ -7,6 +7,11 @@
 #include <string.h>
 #include<ctype.h>
 
+ void limpiarBuffr(){
+   char c;
+  while((c = getchar()) != '\n' && c != EOF);
+}
+
 
 char c;
 int colorRand[5];
@@ -299,6 +304,7 @@ jColor = toupper(jColor);
           int mf;
           mF:
           scanf("%d", &mf);
+           limpiarBuffr();
           switch (mf) {
             case 1:
             system("clear");
@@ -345,6 +351,7 @@ jColor = toupper(jColor);
           int mf;
           mc:
           scanf("%d", &mf);
+           limpiarBuffr();
           switch (mf) {
             case 1:
             system("clear");
