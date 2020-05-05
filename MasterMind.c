@@ -10,6 +10,10 @@
 #include "ScoresGame.h"
 
 
+ void limpiarBuffer(){
+   char c;
+  while((c = getchar()) != '\n' && c != EOF);
+}
 
 
 
@@ -32,8 +36,9 @@ int  main(void){
   system("clear");
   menu();
   int menu;
-  fflush(stdin);
+ 
   scanf("%d", &menu);
+  limpiarBuffer();
 
   switch (menu) {
     case 1:
@@ -46,6 +51,8 @@ int  main(void){
     int men;
     re:
     scanf("%d", &men );
+     limpiarBuffer();
+
     switch (men) {
       case 1:
       system("clear");
@@ -55,6 +62,8 @@ int  main(void){
       rr:
 
       scanf("%d", &mn );
+      limpiarBuffer();
+
 
       switch (mn) {
         case 1:
