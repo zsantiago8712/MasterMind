@@ -7,6 +7,10 @@
 #include <string.h>
 #include<stdbool.h>
 
+ void limpiarBuffr(){
+   char c;
+  while((c = getchar()) != '\n' && c != EOF);
+}
 
 char c;
 int colorRand[5];
@@ -293,6 +297,7 @@ void normal(char tN[12][5], char tN2[12][5]){
           int mf;
           mF:
           scanf("%d", &mf);
+          limpiarBuffr();
           switch (mf) {
             case 1:
             system("clear");
@@ -335,6 +340,7 @@ void normal(char tN[12][5], char tN2[12][5]){
           int mf;
           mc:
           scanf("%d", &mf);
+          limpiarBuffr();
           switch (mf) {
             case 1:
             system("clear");
