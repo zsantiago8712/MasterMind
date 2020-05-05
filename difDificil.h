@@ -7,6 +7,11 @@
 #include <string.h>
 #include<stdbool.h>
 
+  void limpiarBuffr(){
+   char c;
+  while((c = getchar()) != '\n' && c != EOF);
+}
+
 
 char c;
 int colorRand[5];
@@ -293,6 +298,7 @@ void dificil(char dF[12][5], char dF2[12][5]){
           int mf;
           mF:
           scanf("%d", &mf);
+          limpiarBuffr();
           switch (mf) {
             case 1:
             system("clear");
@@ -335,6 +341,7 @@ void dificil(char dF[12][5], char dF2[12][5]){
           int mf;
           mc:
           scanf("%d", &mf);
+          limpiarBuffr();
           switch (mf) {
             case 1:
             system("clear");
