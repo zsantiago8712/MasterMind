@@ -322,7 +322,6 @@ jColor = toupper(jColor);
 
             case 2:
             system(" spd-say GOODBYE");
-            system("rhythmbox-client --stop");
             system("clear");
             exit(0);
             break;
@@ -339,7 +338,6 @@ jColor = toupper(jColor);
         if(correctas != 14){
           system("clear");
           cM();
-          system("rhythmbox-client --stop");
           printf("\n\n\n\t\t\t\tPERDISTE!!!! =(\n\n" );
           system(" spd-say HA' 'HA' 'HA' 'HA' 'HA' 'HA' 'HA' 'HA' 'LOSER");
           printf("\n La combinación correcta era %c %c %c %c %c\n\n",color[0], color[1], color[2], color[3], color[4]);
@@ -369,7 +367,6 @@ jColor = toupper(jColor);
 
             case 2:
             system(" spd-say GOODBYE");
-            system("rhythmbox-client --stop");
             system("clear");
             exit(0);
             break;
