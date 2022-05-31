@@ -8,16 +8,16 @@
 
 static unsigned char repeteadeColor(const char colorsCPU[5], const unsigned char lenght, const unsigned char color);
 static void getRandomColors(char colorsCPU[5]);
-static void createTbaleros(char** tableroJugador, char** tableroCPU, unsigned int size);
-static void fillTableros(char** tableroJugador, char** tableroCPU, unsigned char size);
-
+static char** createTbalero(unsigned int size);
+static void fillTablero(char** tablero, unsigned char size);
 
 void initPlayers(Players* players, unsigned char size){
     players->intentos = 0;
     players->aciertos = 0;
     players->size = size;
     getRandomColors(players->cpuColors);
-    createTbaleros(players->tableroJugador, players->tableroCPU, size);    
+    players->tableroJugador = createTbalero(players->size);   
+    players->tableroCPU = createTbalero(players->size);
 }
 
 void destroyPLayers(Players* players){
@@ -68,25 +68,22 @@ static unsigned char repeteadeColor(const char colorsCPU[5], const unsigned char
     return FALSE;
 }
 
-static void createTbaleros(char** tableroJugador, char** tableroCPU, unsigned int size){
-    tableroJugador = (char**) calloc(size, sizeof(char*));
-    tableroCPU = (char**) calloc(size, sizeof(char*));
+static char** createTbalero(unsigned int size){
+    char** tablero = (char**) calloc(size, sizeof(char*));
+   
 
-    for(unsigned char i = 0; i < size; i++){
-        tableroJugador[i] = (char*) calloc(5, sizeof(char));
-        tableroCPU[i] = (char*) calloc(5, sizeof(char));
-    }
-
-    
-    fillTableros(tableroJugador, tableroCPU, size);
+    for(unsigned char i = 0; i < size; i++)
+        tablero[i] = (char*) calloc(5, sizeof(char));
+       
+    fillTablero(tablero, size);
+    return tablero;
 }
 
 
-static void fillTableros(char** tableroJugador, char** tableroCPU, unsigned char size){
+static void fillTablero(char** tablero, unsigned char size){
     for(unsigned int i = 0; i < size; i++){
         for(unsigned int j = 0; j < 5; j++){
-            tableroJugador[i][j] = (j + 1) + '0';
-            tableroCPU[i][j] = (j + 1) + '0';
+            tablero[i][j] = (j + 1) + '0';
         }
     }
 }

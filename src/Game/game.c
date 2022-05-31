@@ -99,12 +99,12 @@ static void jugar(Game* game){
         letra = toupper(letra);
         if(index >= 1 && index <= 5 && checkLeterRepeticion(letra, game->players.tableroJugador[game->players.intentos]) == FALSE){
             if(checkLeter(letra, game->players.cpuColors) == TRUE){
-                game->players.tableroCPU[game->players.intentos][index] = 'X';
+                game->players.tableroCPU[game->players.intentos][index - 1] = 'X';
                 game->players.aciertos += 1;
             }else
-                game->players.tableroCPU[game->players.intentos][index] = 'O';
+                game->players.tableroCPU[game->players.intentos][index - 1] = 'O';
 
-            game->players.tableroJugador[game->players.intentos][index] = letra;
+            game->players.tableroJugador[game->players.intentos][index - 1] = letra;
 
         }
 
@@ -155,7 +155,7 @@ static void printTablero(const char** tableroJugador, const char** tableroCPU, D
     puts("\t\t\t  Tablero\t\t\t\tCoincidencias\n");
                  
     for(unsigned char i = 0; i < dif; i++){
-        puts("\t\t----------------\t\t  ~~~~~~~~~~~~~~~~");
+        puts("\t\t----------------\t ~~~~~~~~~~~~~~~");
         printf("\t\t|" );
 
         for(unsigned char j = 0; j < 5; j++)
@@ -164,7 +164,8 @@ static void printTablero(const char** tableroJugador, const char** tableroCPU, D
         printf("\t|");
 
         for(unsigned char j = 0; j < 5; j++)
-          printf(" %c|", tableroCPU[i][j]);
+            printf(" %c|", tableroCPU[i][j]);
+        printf("\n");
     }
 } 
 
