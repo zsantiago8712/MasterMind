@@ -1,0 +1,38 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "OsX-Engine",
+            "type": "lldb",
+            "request": "launch",
+            "program": "${workspaceFolder}/bin/macosx-ARM64-Debug/OpenGL/OpenGL",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "preLaunchTask": "Build Debug"
+        },
+        {
+            "name": "Windows",
+            "type": "lldb",
+            "request": "launch",
+            "program": "${workspaceFolder}/bin/winodws-86_64-Debug/OpenGL/OpenGL.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "preLaunchTask": "Build Debug"
+        },
+        {
+            "name": "Linux",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/bin/linux-86_64-Debug/OpenGL/OpenGL",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "preLaunchTask": "Build Debug"
+        }
+    ]
+}
